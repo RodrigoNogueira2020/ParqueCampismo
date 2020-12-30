@@ -1,11 +1,57 @@
+/*
+* Projeto Gestão de Reservas de Parque de Campismo
+* Autores: +Rodrigo Nogueira - 200262002 - 200262002@estudantes.ips.pt
+*          +Ricardo Reis     - 200262024 - 200262024@estudantes.ips.pt
+* 1ª Fase de Entrega
+*/
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
 #include <locale.h>
 
-void menu(int *matriz[][]){
+void apresentarMapa(){
+    int l, c; // Linha e coluna respetivamente
+    const int DIMLIN = 3, DIMCOL = 2; // Dimensão do parque de campismo
 
-    int opcao;
-    char opcao2;
+    /* Prototipo do mapa
+    printf("\n");
+    printf("%8s %5s %5s %5s %5s\n", "1", "2", "3", "4", "5");
+
+    printf("%2s %6s %5s %5s %5s %5s\n", "1", "...", "...", "...", "...", "...");
+    printf("%2s %6s %5s %5s %5s %5s\n", "2", "...", "...", "...", "...", "...");
+    printf("%2s %6s %5s %5s %5s %5s\n", "3", "...", "...", "...", "...", "...");
+    printf("%2s %6s %5s %5s %5s %5s\n", "4", "...", "...", "...", "...", "...");
+    printf("%2s %6s %5s %5s %5s %5s\n\n", "5", "...", "...", "...", "...", "...");
+
+    /*
+     |                                  |
+     |       1     2     3     4     5  |
+     | 1    ...   ...   ...   ...   ... |
+     |                                  |
+     */
+
+    printf("\n\nMapa dos lotes:\n\n");
+
+    /*Número de colunas*/
+
+    printf("%3s", ""); // Espaço esquerdo inicial da coluna da tabela
+    for(l=0;l<DIMCOL;l++)
+        printf("%5d ", l+1);
+
+    /*Número de linhas*/
+    for(l=0;l<DIMLIN;l++){
+        printf("\n");
+        printf("%2d    ", l+1);
+
+        for (c=0;c<DIMCOL;c++)
+            printf("%s %2s", "...", " ");
+    }
+    puts("\n");
+}
+
+void menu(){
+    int opcao; // Utilizado para verficar a opção escolhida do menu principal
+    char opcaoSair; // Utilizado para verficar a opção escolhida na confirmação se o utilizador deseja mesmo sair.
 
     do{
         printf("1 - Visualizar o mapa do parque\n");
@@ -21,28 +67,28 @@ void menu(int *matriz[][]){
         switch(opcao){
             case 0:
                 do{
-                    printf("Deseja sair da aplicação? (S/N):\n");
-                    scanf("%c", &opcao2);
+                    printf("Deseja sair da aplicação? (s/n): ");
+                    scanf("%c", &opcaoSair);
                     fflush(stdin);
 
-                    switch(opcao2){
-                        case 's': case 'S':
+                    switch(tolower(opcaoSair)){
+                        case 's':
                             printf("Adeus!\n");
-                            return 0;
                             break;
-                        case 'n': case 'N':
+                        case 'n':
                             opcao=1;
                             puts("");
                             break;
                         default:
-                            printf("Erro. Insira uma opção válida!\n");
+                            printf("Erro: Insira uma opção válida!\n");
                     }
-                }while(opcao!=1);
+                }while(opcao!=1 && (tolower(opcaoSair)!='s'));
+
                 break;
 
+            // Visualizar o mapa do parque
             case 1:
-                printf("1ª opção escolhida");
-                mapa(&matriz);
+                apresentarMapa();
                 break;
             case 2:
                 printf("2ª opção escolhida");
@@ -53,26 +99,19 @@ void menu(int *matriz[][]){
             case 4:
                 printf("4ª opção escolhida");
                 break;
+            case 7:
+                system("cls"); // Limpar o ecrã
+                break;
             default:
-                printf("Erro. Insira uma opção válida!\n");
+                printf("Erro: Insira uma opção válida!\n");
         }
     }while(opcao!=0);
-}
-
-void mapa(int *matriz[][]){
-    int i, j;
-    for(i=0;i<3;i++){
-        for (j=0;j<3;j++){
-             scanf("%d", &matriz[i][j]);
-        }
-    }
 }
 
 int main(void){
     setlocale(LC_ALL, "");
     //int matriz[5][5];
     menu();
-    //mapa();
 }
 
 
