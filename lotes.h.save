@@ -17,11 +17,11 @@ typedef struct{
     char redeEletrica; // e - Se tem rede eletrica, x - Se não tem rede eletrica
     float preco;
     /* Tenda - 4,50€
-     * Caravana - 6,00€
-     * Autocaravana - 14,90€
-     * Eletricidade - 3,00€
-     * Campista - 3,50€
-     */
+     * CA
+     *
+     *
+     *
+    */
 } lote;
 
 #endif // LOTES_H_INCLUDED

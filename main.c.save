@@ -36,9 +36,9 @@ void apresentarMapa(){
      */
 
     /*printf("\nInsira o número de linhas do mapa: "); /*
-    scanf("%d", &DIMLIN);                               * Pedir ao utilizador o tamanho do mapa do parque
+    scanf("%d", &DIMLIN);                               * Pedir ao utilizador 
     printf("Insira o número de colunas do mapa: ");     *
-    scanf("%d", &DIMCOL);*/                           //*
+    scanf("%d", &DIMCOL);*/                           //* 
 
     printf("\n\nMapa dos lotes:\n\n");
 
@@ -101,7 +101,7 @@ void menu(){
                 apresentarMapa();
                 break;
             case 2:
-                pedirDadosLotes();
+                printf("2ª opção escolhida");
                 break;
             case 3:
                 printf("3ª opção escolhida");
