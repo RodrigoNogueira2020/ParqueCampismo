@@ -13,46 +13,6 @@
 #include "campista.h"
 #include "lotes.h"
 
-void apresentarMapa(){
-    int l, c; // Linha e coluna respetivamente
-    const int DIMLIN = 3, DIMCOL = 2; // Dimensão do parque de campismo
-
-    /* Prototipo do mapa
-    printf("\n");
-    printf("%8s %5s %5s %5s %5s\n", "1", "2", "3", "4", "5");
-
-    printf("%2s %6s %5s %5s %5s %5s\n", "1", "...", "...", "...", "...", "...");
-    printf("%2s %6s %5s %5s %5s %5s\n", "2", "...", "...", "...", "...", "...");
-    printf("%2s %6s %5s %5s %5s %5s\n", "3", "...", "...", "...", "...", "...");
-    printf("%2s %6s %5s %5s %5s %5s\n", "4", "...", "...", "...", "...", "...");
-    printf("%2s %6s %5s %5s %5s %5s\n\n", "5", "...", "...", "...", "...", "...");
-
-
-     |                                  |
-     |       1     2     3     4     5  |
-     | 1    ...   ...   ...   ...   ... |
-     |                                  |
-     */
-
-    printf("\n\nMapa dos lotes:\n\n");
-
-    /*Número de colunas*/
-
-    printf("%3s", ""); // Espaço esquerdo inicial da coluna da tabela
-    for(l=0;l<DIMCOL;l++)
-        printf("%5d ", l+1);
-
-    /*Número de linhas*/
-    for(l=0;l<DIMLIN;l++){
-        printf("\n");
-        printf("%2d    ", l+1);
-
-        for (c=0;c<DIMCOL;c++)
-            printf("%s %2s", "...", " ");
-    }
-    puts("\n");
-}
-
 void menu(){
     int opcao; // Utilizado para verficar a opção escolhida do menu principal
     char opcaoSair; // Utilizado para verficar a opção escolhida na confirmação se o utilizador deseja mesmo sair.
@@ -110,10 +70,4 @@ void menu(){
                 printf("Erro: Insira uma opção válida!\n");
         }
     }while(opcao!=0);
-}
-
-int main(void){
-    setlocale(LC_ALL, "");
-    //int matriz[5][5];
-    menu();
 }

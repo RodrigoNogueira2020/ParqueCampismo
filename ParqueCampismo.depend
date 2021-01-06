@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1609935580 source:c:\users\ricardo reis\desktop\parquecampismo\main.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<locale.h>
+	"campista.h"
+
+1609935857 c:\users\ricardo reis\desktop\parquecampismo\campista.h
+
