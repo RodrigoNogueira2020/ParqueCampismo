@@ -13,6 +13,10 @@
 #include "campista.h"
 #include "lotes.h"
 
+lote reservaLote;
+
+void pedirDadosLotes(lote *reservaLote);
+
 void apresentarMapa(){
     int l, c; // Linha e coluna respetivamente
     const int DIMLIN = 5, DIMCOL = 5; // Dimensão do parque de campismo
@@ -42,12 +46,11 @@ void apresentarMapa(){
 
     printf("\n\nMapa dos lotes:\n\n");
 
-    /*Número de colunas*/
-
+    /*Formação das colunas*/
     printf("%3s", ""); // Espaço esquerdo inicial da coluna da tabela
-    for(l=0;l<DIMCOL;l++)
+    for(l=0;l<DIMCOL;l++){
         printf("%5d ", l+1);
-
+    }
     /*Número de linhas*/
     for(l=0;l<DIMLIN;l++){
         printf("\n");
@@ -70,7 +73,7 @@ void menu(){
         printf("4 - Pesquisar lote do nome de campista\n");
         printf("5 - Editar a reserva de um lote\n");
         printf("6 - Libertar reserva\n");
-        printf("0 - Sair\n\n");
+        printf("\n0 - Sair\n\n");
         scanf("%d", &opcao);
         fflush(stdin);
 
@@ -101,7 +104,9 @@ void menu(){
                 apresentarMapa();
                 break;
             case 2:
-                pedirDadosLotes();
+//                lote reservaLote;
+//                pedirDadosLotes(&reservaLote);
+                pedirDadosLotes(reservaLote);
                 break;
             case 3:
                 printf("3ª opção escolhida");
@@ -120,6 +125,5 @@ void menu(){
 
 int main(void){
     setlocale(LC_ALL, "");
-    //int matriz[5][5];
     menu();
 }

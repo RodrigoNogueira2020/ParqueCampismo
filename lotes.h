@@ -15,6 +15,7 @@ typedef struct{
     campista pessoaCampista;
     char tipoAlojamento; // T - tenda, C - caravana ou A - autocaravana
     char redeEletrica; // e - Se tem rede eletrica, x - Se não tem rede eletrica
+    int numeroCampistas; // Número de campistas por lote
     float preco;
     /* Tenda - 4,50€
      * Caravana - 6,00€
@@ -23,5 +24,7 @@ typedef struct{
      * Campista - 3,50€
      */
 } lote;
+
+void pedirDadosLotes(lote *reservaLote);
 
 #endif // LOTES_H_INCLUDED
