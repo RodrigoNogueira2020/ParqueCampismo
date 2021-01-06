@@ -6,7 +6,6 @@
 ||============================================================================
 || 1ª Fase de Entrega
 */
-
 #include "campista.h"
 #ifndef LOTES_H_INCLUDED
 #define LOTES_H_INCLUDED
@@ -23,5 +22,8 @@ typedef struct{
      * Campista - 3,50€
      */
 } lote;
+
+void pedirCoordenadasLote(int *linha, int *coluna);
+void pedirDadosLotes(lote *reservaLote);
 
 #endif // LOTES_H_INCLUDED

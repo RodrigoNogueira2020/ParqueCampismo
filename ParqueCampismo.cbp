@@ -31,7 +31,13 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="campista.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="campista.h" />
+		<Unit filename="lotes.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="lotes.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
