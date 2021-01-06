@@ -20,22 +20,33 @@ void pedirDadosLotes(lote *reservaLote){
         printf("Tipo de alojamento [Tenda (T) // Caravana (C) // Autocaravana (A)]: ");
         scanf("%c", &reservaLote->tipoAlojamento);
         fflush(stdin);
-        if(tolower(reservaLote->tipoAlojamento) != 't' && tolower(reservaLote->tipoAlojamento) !='c' && tolower(reservaLote->tipoAlojamento) !='a'){
-            printf("ERRO! Caractér inválido!\n");
+
+        switch(tolower(eletricidade)){
+            case 't': case 'c': case 'a':
+                break;
+
+            default:
+                printf("==ERRO! Caractér inválido!==\n");
         }
+
     }while(tolower(reservaLote->tipoAlojamento) !='t' && tolower(reservaLote->tipoAlojamento) !='c' && tolower(reservaLote->tipoAlojamento) !='a');
 
     do{
         printf("Tem ligação à rede eletrica(S/N): ");
-        scanf("%c", &eletricidade);
+        scanf("%c", &eletricidade/*reservaLote->redeEletrica*/);
         fflush(stdin);
 
-        if(tolower(eletricidade=='s')){
-            reservaLote->redeEletrica='e';
-        }else if(tolower(eletricidade=='n')){
-            reservaLote->redeEletrica ='x';
-        }else{
-            printf("ERRO! Caractér inválido!");
+        switch(tolower(eletricidade)){
+            case 's':
+                reservaLote->redeEletrica='e';
+                break;
+
+            case 'n':
+                reservaLote->redeEletrica ='x';
+                break;
+
+            default:
+                printf("==ERRO! Caractér inválido!==\n");
         }
 
     }while(tolower(eletricidade) !='s' && tolower(eletricidade) !='n');
@@ -114,48 +125,4 @@ void pedirCoordenadasLote(int *linha, int *coluna){
         fflush(stdin);
     }while(linha > 5);
 
-}
-
-void pedirDadosLotes(lote *reservaLote){
-    char eletricidade;
-
-    do{
-        printf("Tipo de alojamento [Tenda (T) // Caravana (C) // Autocaravana (A)]: ");
-        scanf("%c", &reservaLote->tipoAlojamento);
-        fflush(stdin);
-
-        switch(tolower(eletricidade)){
-            case 't': case 'c': case 'a':
-                break;
-
-            default:
-                printf("==ERRO! Caractér inválido!==\n");
-        }
-
-    }while(tolower(reservaLote->tipoAlojamento) !='t' && tolower(reservaLote->tipoAlojamento) !='c' && tolower(reservaLote->tipoAlojamento) !='a');
-
-    do{
-        printf("Tem ligação à rede eletrica(S/N): ");
-        scanf("%c", &eletricidade/*reservaLote->redeEletrica*/);
-        fflush(stdin);
-
-        switch(tolower(eletricidade)){
-            case 's':
-                reservaLote->redeEletrica='e';
-                break;
-
-            case 'n':
-                reservaLote->redeEletrica ='x';
-                break;
-
-            default:
-                printf("==ERRO! Caractér inválido!==\n");        }
-
-    }while(tolower(eletricidade) !='s' && tolower(eletricidade) !='n');
-
-//    printf("===== Dados dos campistas =====");
-//    printf("Nome do campista: ");
-//    gets(reservaLote->pessoaCampista.nome);
-//    printf("Idade do campista :");
-//    scanf("%d", &reservaLote->pessoaCampista.idade);
 }
