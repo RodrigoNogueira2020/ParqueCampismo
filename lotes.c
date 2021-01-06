@@ -14,12 +14,19 @@
 #include "lotes.h"
 
 void pedirCoordenadasLote(int *linha, int *coluna){
-    printf("Introduza a coluna: ");
-    scanf("%d", linha);
+    do{
+        printf("Introduza a coluna onde se encontra o lote: ");
+        scanf("%d", coluna);
 
-    printf("\nIntroduza a linha onde se encontra o lote: ");
-    scanf("%d", coluna);
-    fflush(stdin);
+    }while(coluna > 5);
+    // PARA FAZER: Em vez de 5, deve ir buscar o valor das colunas no mapa dos lotes,
+    //talvez numa struct propria para se poder mudar isso? mapaLote->Coluna?
+
+    do{
+        printf("\nIntroduza a linha onde se encontra o lote: ");
+        scanf("%d", linha);
+        fflush(stdin);
+    }while(linha > 5);
 
 }
 
