@@ -1,10 +1,36 @@
 # depslib dependency file v1.0
-1609935580 source:c:\users\ricardo reis\desktop\parquecampismo\main.c
+1609962320 source:c:\users\ricardo reis\desktop\parquecampismo\main.c
 	<stdio.h>
 	<stdlib.h>
 	<ctype.h>
 	<locale.h>
 	"campista.h"
+	"lotes.h"
 
 1609935857 c:\users\ricardo reis\desktop\parquecampismo\campista.h
+
+1609957475 source:c:\users\ricardo reis\desktop\parquecampismo\menu.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<locale.h>
+	"campista.h"
+	"lotes.h"
+
+1609962296 c:\users\ricardo reis\desktop\parquecampismo\lotes.h
+	"campista.h"
+
+1609962810 source:c:\users\ricardo reis\desktop\parquecampismo\lotes.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	"campista.h"
+	"lotes.h"
+
+1609962278 source:c:\users\ricardo reis\desktop\parquecampismo\campista.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	"campista.h"
+	"lotes.h"
 

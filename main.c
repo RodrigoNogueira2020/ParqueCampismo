@@ -38,12 +38,12 @@ void apresentarMapa(){
      | 1    ...   ...   ...   ...   ... |
      |                                  |
      */
-
-    /*printf("\nInsira o número de linhas do mapa: "); /*
+    /*
+    printf("\nInsira o número de linhas do mapa: ");
     scanf("%d", &DIMLIN);                               * Pedir ao utilizador o tamanho do mapa do parque
     printf("Insira o número de colunas do mapa: ");     *
-    scanf("%d", &DIMCOL);*/                           //*
-
+    scanf("%d", &DIMCOL);
+    */
     printf("\n\nMapa dos lotes:\n\n");
 
     /*Formação das colunas*/
@@ -65,6 +65,7 @@ void apresentarMapa(){
 void menu(){
     int opcao; // Utilizado para verficar a opção escolhida do menu principal
     char opcaoSair; // Utilizado para verficar a opção escolhida na confirmação se o utilizador deseja mesmo sair.
+    int l=0, c=0;
 
     do{
         printf("1 - Visualizar o mapa do parque\n");
@@ -104,9 +105,13 @@ void menu(){
                 apresentarMapa();
                 break;
             case 2:
+
 //                lote reservaLote;
 //                pedirDadosLotes(&reservaLote);
                 pedirDadosLotes(reservaLote);
+                apresentarMapa();
+                pedirCoordenadasLote(&l, &c);
+                pedirDadosLotes(&lote[l][c]);
                 break;
             case 3:
                 printf("3ª opção escolhida");
