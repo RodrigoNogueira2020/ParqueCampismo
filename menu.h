@@ -1,3 +1,6 @@
+#ifndef MENU_H_INCLUDED
+#define MENU_H_INCLUDED
+
 /*
 || Projeto Gestão de Reservas de Parque de Campismo
 ||============================================================================
@@ -14,10 +17,7 @@
 #include "lotes.h"
 #include "menu.h"
 
+void menu();
 
-int main(){
-    setlocale(LC_ALL, "");
-    menu();
 
-    return 0;
-}
+#endif // MENU_H_INCLUDED

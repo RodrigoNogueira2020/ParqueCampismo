@@ -6,9 +6,12 @@
 ||============================================================================
 || 1ª Fase de Entrega
 */
-#include "campista.h"
 #ifndef LOTES_H_INCLUDED
 #define LOTES_H_INCLUDED
+#include "campista.h"
+#include "mapa.h"
+
+
 
 typedef struct{
     campista pessoaCampista;
@@ -25,6 +28,6 @@ typedef struct{
 } lote;
 
 void pedirCoordenadasLote(int *linha, int *coluna);
-void pedirDadosLotes(lote *reservaLote);
+void pedirDadosLotes(lote *reservaLote[][10]);
 
 #endif // LOTES_H_INCLUDED

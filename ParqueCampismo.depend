@@ -1,36 +1,56 @@
 # depslib dependency file v1.0
-1609962320 source:c:\users\ricardo reis\desktop\parquecampismo\main.c
+1610026586 source:c:\users\ricardo reis\desktop\parquecampismo\main.c
 	<stdio.h>
 	<stdlib.h>
 	<ctype.h>
 	<locale.h>
 	"campista.h"
 	"lotes.h"
+	"menu.h"
 
-1609935857 c:\users\ricardo reis\desktop\parquecampismo\campista.h
+1609970225 c:\users\ricardo reis\desktop\parquecampismo\campista.h
 
-1609957475 source:c:\users\ricardo reis\desktop\parquecampismo\menu.c
+1610028245 source:c:\users\ricardo reis\desktop\parquecampismo\menu.c
 	<stdio.h>
 	<stdlib.h>
 	<ctype.h>
 	<locale.h>
 	"campista.h"
 	"lotes.h"
+	"menu.h"
+	"mapa.h"
 
-1609962296 c:\users\ricardo reis\desktop\parquecampismo\lotes.h
+1610026762 c:\users\ricardo reis\desktop\parquecampismo\lotes.h
 	"campista.h"
+	"mapa.h"
 
-1609962810 source:c:\users\ricardo reis\desktop\parquecampismo\lotes.c
+1610026852 source:c:\users\ricardo reis\desktop\parquecampismo\lotes.c
+
+1609970225 source:c:\users\ricardo reis\desktop\parquecampismo\campista.c
 	<stdio.h>
 	<stdlib.h>
 	<ctype.h>
 	"campista.h"
 	"lotes.h"
 
-1609962278 source:c:\users\ricardo reis\desktop\parquecampismo\campista.c
+1610026671 c:\users\ricardo reis\desktop\parquecampismo\menu.h
 	<stdio.h>
 	<stdlib.h>
 	<ctype.h>
+	<locale.h>
 	"campista.h"
 	"lotes.h"
+	"menu.h"
+
+1610027823 source:c:\users\ricardo reis\desktop\parquecampismo\mapa.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<locale.h>
+	"campista.h"
+	"lotes.h"
+	"menu.h"
+	"mapa.h"
+
+1610028023 c:\users\ricardo reis\desktop\parquecampismo\mapa.h
 
