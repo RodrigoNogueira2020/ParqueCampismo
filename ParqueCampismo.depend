@@ -24,7 +24,7 @@
 	"campista.h"
 	"mapa.h"
 
-1610036678 source:c:\users\ricardo reis\desktop\parquecampismo\lotes.c
+1610038180 source:c:\users\ricardo reis\desktop\parquecampismo\lotes.c
 	<ctype.h>
 	<stdio.h>
 	<stdlib.h>
@@ -48,7 +48,7 @@
 	"lotes.h"
 	"menu.h"
 
-1610036455 source:c:\users\ricardo reis\desktop\parquecampismo\mapa.c
+1610037168 source:c:\users\ricardo reis\desktop\parquecampismo\mapa.c
 	<stdio.h>
 	<stdlib.h>
 	<ctype.h>

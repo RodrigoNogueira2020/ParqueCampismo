@@ -127,22 +127,31 @@ void pedirDadosLotes(lote *reservaLote[mapaDimensoes.linha][mapaDimensoes.coluna
     }
 }
 
-// Registar lote
-void pedirCoordenadasLote(int *pedirLinha, int *pedirColuna, int linhaDoLote, int colunaDoLote){
+// Registar lote | linhasDoLote
+void pedirCoordenadasLote(int *pedirLinha, int *pedirColuna, int linhasDoLote, int colunasDoLote){
     do{
         printf("Introduza a coluna onde se encontra o lote: ");
         scanf("%d", pedirColuna);
 
-        if(pedirColuna > colunaDoLote)
-            printf("\n==ERRO! Número de coluna inserido excede o número máximo de colunas do mapa==\n");
-        else if(pedirColuna < 1)
-            printf("\n==ERRO! Número de coluna inserido é menor que 0==\n");
-    }while(*pedirColuna > colunaDoLote || *pedirColuna < 1);
+        if(*pedirColuna > colunasDoLote)
+            printf("\n==ERRO! Número da coluna inserido excede o número máximo de colunas do mapa==\n");
+        else if(*pedirColuna < 0)
+            printf("\n==ERRO! Número da coluna inserido não pode ser menor que 0 ==\n");
+        else if(*pedirColuna == 0)
+            printf("\n==ERRO! Número da coluna não pode ser 0==\n");
+    }while(*pedirColuna > colunasDoLote || *pedirColuna < 1);
     // PARA FAZER: Em vez de 5, deve ir buscar o valor das colunas no mapa dos lotes,
     //talvez numa struct propria para se poder mudar isso? mapaLote->Coluna?
 
     do{
         printf("\nIntroduza a linha onde se encontra o lote: ");
         scanf("%d", pedirLinha);
-    }while(*pedirLinha > linhaDoLote || *pedirLinha < 1);
+
+        if(*pedirLinha > linhasDoLote)
+            printf("\n==ERRO! Número da linha inserido excede o número máximo de linhas do mapa==\n");
+        else if(*pedirLinha < 0)
+            printf("\n==ERRO! Número da linha inserido não pode ser menor que 0==\n");
+        else if(*pedirLinha == 0)
+            printf("\n==ERRO! Número da linha não pode ser 0==\n");
+    }while(*pedirLinha > linhasDoLote || *pedirLinha < 1);
 }
