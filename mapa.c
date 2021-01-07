@@ -41,9 +41,24 @@ void apresentarMapa(int linha, int coluna){
 }
 
 void mudarDimensoesLote(int *linha, int *coluna){
+    // As dimensões do lote não estão definidas por padrão,
+    //cabe ao utilizador de as definir quando vai visualiza-lo
+    //pela primeira vez.
+
+    printf("\n== A dimensão do lote não está definida ==\n");
     do{
-        printf("A dimensão ")
-        printf("Introduza o número de colunas para o");
-        scanf("%d", &linha)
-    }while(*linha >= 1 && *coluna >= 1);
+        printf("++Introduza o número de colunas para o mapa do lote: ");
+        scanf("%d", coluna);
+        printf("\n%d\n", *coluna);
+
+        if(coluna <= 0)
+            printf("\n==ERRO! Número de coluna tem de ser maior que 0, senão não existe==\n");
+    }while(*coluna != 0 && *coluna < 0);
+
+    do{
+        printf("++Introduza o número de linhas para o mapa do lote: ");
+        scanf("%d", linha);
+        if(coluna <= 0)
+            printf("\n==ERRO! Número de linhas tem de ser maior que 0, senão não existe==\n");
+    }while(*linha != 0 && *linha < 0);
 }

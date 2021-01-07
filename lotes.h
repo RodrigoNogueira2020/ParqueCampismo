@@ -27,7 +27,7 @@ typedef struct{
      */
 } lote;
 
-void pedirCoordenadasLote(int *linha, int *coluna);
+void pedirCoordenadasLote(int *pedirLinha, int *pedirColuna, int linhaDoLote, int colunaDoLote);
 void pedirDadosLotes(lote *reservaLote[][10]);
 
 #endif // LOTES_H_INCLUDED

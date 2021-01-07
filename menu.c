@@ -24,6 +24,7 @@ void menu(){
     int opcao; // Utilizado para verficar a opção escolhida do menu principal
     char opcaoSair; // Utilizado para verficar a opção escolhida na confirmação se o utilizador deseja mesmo sair.
     int linha=0, coluna=0;
+    int pedirLinha=0, pedirColuna=0;
 //    lote reservaLote[l][c];
 
     do{
@@ -56,7 +57,6 @@ void menu(){
                             printf("Erro: Insira uma opção válida!\n");
                     }
                 }while(opcao!=1 && (tolower(opcaoSair)!='s'));
-
                 break;
 
             //Visualizar o mapa do parque
@@ -66,15 +66,21 @@ void menu(){
                 switch(coluna){
                     case 0:
                         mudarDimensoesLote(&linha, &coluna);
-                        break;
                     default:
                         apresentarMapa(linha, coluna);
                 }
                 break;
+            // Reservar lote
             case 2:
+                switch(coluna){
+                    case 0:
+                        mudarDimensoesLote(&linha, &coluna);
+                    default:
+                        apresentarMapa(linha, coluna);
+                        pedirCoordenadasLote(&pedirLinha, &pedirColuna, linha, coluna);
+                }
+                break;
 
-                apresentarMapa(linha, coluna);
-//                pedirCoordenadasLote(&l, &c);
 
 //                reservaLote[l][c];
 //                pedirDadosLotes(&reservaLote[l][c]);
