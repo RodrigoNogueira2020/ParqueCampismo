@@ -12,7 +12,6 @@
 #include "mapa.h"
 #include "menu.h"
 
-
 typedef struct{
     campista pessoaCampista[6];
     char tipoAlojamento; // T - tenda, C - caravana ou A - autocaravana
@@ -32,9 +31,9 @@ typedef struct{
 } lote;
 
 /*Para definir as dimensões do lote*/
-void pedirCoordenadasLote(int *pedirLinha, int *pedirColuna, int linhaDoLote, int colunaDoLote);
+void pedirCoordenadasLote(int *pedirLinha, int *pedirColuna);
 
-lote criarLote(campista pessoaCampista, char tipoAlojamento, char redeEletrica, int numeroCampistas, float preco, int coordenadasLin, int coordenadasCol);
+lote criarLote(campista pessoaCampista[], char tipoAlojamento, char redeEletrica, int numeroCampistas, float preco, int coordenadasLin, int coordenadasCol);
 
 /*Para definir as dimensões do lote*/
 void pedirDadosLotes(int linha, int coluna);

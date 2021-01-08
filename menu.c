@@ -21,11 +21,11 @@
 
 
 void menu(){
-    int opcao; // Utilizado para verficar a opção escolhida do menu principal
-    char opcaoSair; // Utilizado para verficar a opção escolhida na confirmação se o utilizador deseja mesmo sair.
+    int opcao; // Opção escolhida do menu principal
+    char opcaoSair; // Utilizado na confirmação se o utilizador deseja mesmo sair. (opcao == 0)
     int linha=0, coluna=0;
     int pedirLinha=0, pedirColuna=0;
-    lote reservaLote[pedirLinha][pedirColuna];
+//    lote reservaLote[pedirLinha][pedirColuna];
 //    lote reservaLote[l][c];
 
     do{
@@ -38,6 +38,10 @@ void menu(){
         printf("\n0 - Sair\n\n");
         scanf("%d", &opcao);
         fflush(stdin);
+
+        // Algumas letras introduzidas são recebidas como opções no menu, isto previne isso
+        if(opcao < '0' || opcao > '7')
+            opcao = 90;
 
         switch(opcao){
             case 0:
@@ -55,18 +59,17 @@ void menu(){
                             puts("");
                             break;
                         default:
-                            printf("Erro: Insira uma opção válida!\n");
+                            printf("==ERRO! Insira uma opção válida!==\n");
                     }
                 }while(opcao!=1 && (tolower(opcaoSair)!='s'));
                 break;
 
-            //Visualizar o mapa do parque
+            // Visualizar o mapa do parque
             case 1:
-                // Verifica se e coluna é zero
-                //(não definida porque o lote não pode ter 0 colunas nem zero linhas)
+                // Se coluna é zero é porque o mapa dos lotes ainda não existe
                 switch(coluna){
                     case 0:
-                        mudarDimensoesLote(&linha, &coluna);
+                        definirDimensoesLote(&linha, &coluna);
                     default:
                         apresentarMapa(linha, coluna);
                 }
@@ -74,24 +77,20 @@ void menu(){
             // Reservar lote
             case 2:
                 switch(coluna){
-                    // Verifica se e coluna é zero
-                    //(não definida porque o lote não pode ter 0 colunas nem zero linhas)
+                    // Se coluna é zero é porque o mapa dos lotes ainda não existe
                     case 0:
-                        mudarDimensoesLote(&linha, &coluna);
+                        definirDimensoesLote(&linha, &coluna);
                     default:
                         apresentarMapa(linha, coluna);
-//                        pedirCoordenadasLote(&pedirLinha, &pedirColuna, linha, coluna);
+                        pedirCoordenadasLote(&pedirLinha, &pedirColuna);
 //                        pedirDadosLotes(&reservaLote[pedirLinha][pedirColuna]);
                 }
                 break;
-
-
-//                reservaLote[l][c];
-//                pedirDadosLotes(&reservaLote[l][c]);
-                break;
+            // Consultar informação de lote
             case 3:
                 printf("3ª opção escolhida");
                 break;
+            // Pesquisar lote do nome de campista
             case 4:
                 printf("4ª opção escolhida");
                 break;
@@ -99,7 +98,7 @@ void menu(){
                 system("cls"); // Limpar o ecrã
                 break;
             default:
-                printf("Erro: Insira uma opção válida!\n");
+                printf("\n==ERRO! Escolha uma opção correspondente às do menu!==\n");
         }
     }while(opcao!=0);
 }
