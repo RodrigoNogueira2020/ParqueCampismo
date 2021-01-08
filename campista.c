@@ -13,6 +13,13 @@
 #include "campista.h"
 #include "lotes.h"
 
+campista criarCampista(char *nome, int idade){
+    campista campista;
+    strcpy(campista.nome, nome);
+	campista.idade = idade;
+    return campista;
+}
+
 //void imprimirDadosCampista(Campista criarCampista){
 //    printf("Nome: %s\n", criarCampista.nome);
 //    printf("Idade: %d\n", criarCampista.idade);

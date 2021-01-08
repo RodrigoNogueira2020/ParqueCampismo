@@ -25,6 +25,7 @@ void menu(){
     char opcaoSair; // Utilizado para verficar a opção escolhida na confirmação se o utilizador deseja mesmo sair.
     int linha=0, coluna=0;
     int pedirLinha=0, pedirColuna=0;
+    lote reservaLote[pedirLinha][pedirColuna];
 //    lote reservaLote[l][c];
 
     do{
@@ -73,11 +74,14 @@ void menu(){
             // Reservar lote
             case 2:
                 switch(coluna){
+                    // Verifica se e coluna é zero
+                    //(não definida porque o lote não pode ter 0 colunas nem zero linhas)
                     case 0:
                         mudarDimensoesLote(&linha, &coluna);
                     default:
                         apresentarMapa(linha, coluna);
-                        pedirCoordenadasLote(&pedirLinha, &pedirColuna, linha, coluna);
+//                        pedirCoordenadasLote(&pedirLinha, &pedirColuna, linha, coluna);
+//                        pedirDadosLotes(&reservaLote[pedirLinha][pedirColuna]);
                 }
                 break;
 

@@ -11,9 +11,10 @@
 #define CAMPISTA_H_INCLUDED
 
 typedef struct{
-    char nome[50];
+    char nome[101];
     int idade;
 } campista;
 
+campista criarCampista(char *nome, int idade);
 
 #endif // CAMPISTA_H_INCLUDED

@@ -10,16 +10,20 @@
 #define LOTES_H_INCLUDED
 #include "campista.h"
 #include "mapa.h"
-
+#include "menu.h"
 
 
 typedef struct{
-    campista pessoaCampista;
+    campista pessoaCampista[6];
     char tipoAlojamento; // T - tenda, C - caravana ou A - autocaravana
     char redeEletrica; // e - Se tem rede eletrica, x - Se não tem rede eletrica
     int numeroCampistas; // Número de campistas por lote
     float preco;
-    /* Tenda - 4,50€
+    int coordenadasLin;
+    int coordenadasCol;
+
+    /*
+     * Tenda - 4,50€
      * Caravana - 6,00€
      * Autocaravana - 14,90€
      * Eletricidade - 3,00€
@@ -27,7 +31,12 @@ typedef struct{
      */
 } lote;
 
+/*Para definir as dimensões do lote*/
 void pedirCoordenadasLote(int *pedirLinha, int *pedirColuna, int linhaDoLote, int colunaDoLote);
-void pedirDadosLotes(lote *reservaLote[][10]);
+
+lote criarLote(campista pessoaCampista, char tipoAlojamento, char redeEletrica, int numeroCampistas, float preco, int coordenadasLin, int coordenadasCol);
+
+/*Para definir as dimensões do lote*/
+void pedirDadosLotes(int linha, int coluna);
 
 #endif // LOTES_H_INCLUDED

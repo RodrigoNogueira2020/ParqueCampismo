@@ -42,6 +42,14 @@
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="mapa.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="mapa.h" />
+		<Unit filename="menu.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="menu.h" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>
