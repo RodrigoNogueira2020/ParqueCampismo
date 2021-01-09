@@ -14,21 +14,6 @@
 #include "lotes.h"
 #include "mapa.h"
 
-//lote criarLoteTemp(campista pessoaCampista[], char tipoAlojamento, char redeEletrica, int numeroCampistas, float preco, int coordenadasLin, int coordenadasCol){
-//    lote criarLoteTemp;
-//    campista criarCampista;
-//    criarLoteTemp.pessoaCampista.nome = pessoaCampista->nome;
-//
-//    criarLoteTemp.tipoAlojamento = tipoAlojamento;
-//    criarLoteTemp.redeEletrica = redeEletrica;
-//    criarLoteTemp.numeroCampistas = numeroCampistas;
-//    criarLoteTemp.preco = preco;
-//    criarLoteTemp.coordenadasLin = coordenadasLin;
-//    criarLoteTemp.coordenadasCol = coordenadasCol;
-//
-//    return criarLoteTemp;
-//}
-
 /*
  * =>*pedirLinha e *pedirColuna
  * São as coordenadas do lote que o utilizador pretende reservar.
@@ -79,15 +64,16 @@ void pedirDadosLotes(int linha, int coluna){
     lote criarLoteTemp[linha][coluna];;
 
     do{
-        printf("=== MENU DE ALOJAMENTO ===\n");
-        printf("++ Tenda           4,50E ++\n");
-        printf("++ Caravana        6,00€ ++\n");
-        printf("++ Autocaravana   14,50€ ++\n");
-        printf("++ Eletricidade    3,00€ ++\n");
-        printf("++ Campista        3,50€ ++\n");
-        printf("==========================\n");
+        printf("===     MENU DE ALOJAMENTO      ===\n");
+        printf("++ Tenda              4,50 Euros ++\n");
+        printf("++ Caravana           6,00 Euros ++\n");
+        printf("++ Autocaravana      14,50 Euros ++\n");
+        printf("++ Eletricidade       3,00 Euros ++\n");
+        printf("++ Campista           3,50 Euros ++\n");
+        printf("================================\n");
 
-        printf("Tipo de alojamento [Tenda (T) // Caravana (C) // Autocaravana (A)]: ");
+        fflush(stdin);
+        printf("Tipo de alojamento [(T)enda // (C)aravana // (A)utocaravana]: ");
         scanf("%c", &tipoAloj);
         fflush(stdin);
 
@@ -139,27 +125,27 @@ void pedirDadosLotes(int linha, int coluna){
         printf("Idade do campista: ");
         scanf("%d", &criarLoteTemp[linha][coluna].pessoaCampista->idade);
         fflush(stdin);
-}
+    }
 
     //Preços com eletricidade
     if(tolower(eletricidade='e')){
         if(tolower(criarLoteTemp[linha][coluna].tipoAlojamento)=='t'){
             criarLoteTemp[linha][coluna].preco=3.00 /*Preço da eletricidade*/ + (3.50*(criarLoteTemp[linha][coluna].numeroCampistas)) /*Preço por número de campistas*/ + 4.50; // Preço da tenta
-            printf("Preço a pagar: %.2f", criarLoteTemp[linha][coluna].preco);
+            printf("Preço a pagar: %.2f\n", criarLoteTemp[linha][coluna].preco);
         }
     }
 
     if(tolower(eletricidade='e')){
         if(tolower(criarLoteTemp[linha][coluna].tipoAlojamento)=='c'){
             criarLoteTemp[linha][coluna].preco=3.00 /*Preço da eletricidade*/ + (3.50*(criarLoteTemp[linha][coluna].numeroCampistas)) /*Preço por número de campistas*/ + 6.00; // Preço da caravana
-            printf("Preço a pagar: %.2f", criarLoteTemp[linha][coluna].preco);
+            printf("Preço a pagar: %.2f\n", criarLoteTemp[linha][coluna].preco);
         }
     }
 
     if(tolower(eletricidade='e')){
         if(tolower(criarLoteTemp[linha][coluna].tipoAlojamento=='a')){
             criarLoteTemp[linha][coluna].preco=3.00 /*Preço da eletricidade*/ + (3.50*(criarLoteTemp[linha][coluna].numeroCampistas)) /*Preço por número de campistas*/ + 14.90; // Preço da autocaravana
-            printf("Preço a pagar: %.2f", criarLoteTemp[linha][coluna].preco);
+            printf("Preço a pagar: %.2f\n", criarLoteTemp[linha][coluna].preco);
         }
     }
 
@@ -167,21 +153,21 @@ void pedirDadosLotes(int linha, int coluna){
     if(tolower(eletricidade='x')){
         if(tolower(criarLoteTemp[linha][coluna].tipoAlojamento=='t')){
             criarLoteTemp[linha][coluna].preco=(3.50*(criarLoteTemp[linha][coluna].numeroCampistas)) /*Preço por número de campistas*/ + 4.50; // Preço da tenta
-            printf("Preço a pagar: %.2f", criarLoteTemp[linha][coluna].preco);
+            printf("Preço a pagar: %.2f\n", criarLoteTemp[linha][coluna].preco);
         }
     }
 
     if(tolower(eletricidade='x')){
         if(tolower(criarLoteTemp[linha][coluna].tipoAlojamento=='c')){
             criarLoteTemp[linha][coluna].preco=(3.50*(criarLoteTemp[linha][coluna].numeroCampistas)) /*Preço por número de campistas*/ + 6.00; // Preço da caravana
-            printf("Preço a pagar: %.2f", criarLoteTemp[linha][coluna].preco);
+            printf("Preço a pagar: %.2f\n", criarLoteTemp[linha][coluna].preco);
         }
     }
 
     if(tolower(eletricidade='x')){
         if(tolower(criarLoteTemp[linha][coluna].tipoAlojamento=='a')){
             criarLoteTemp[linha][coluna].preco=(3.50*(criarLoteTemp[linha][coluna].numeroCampistas)) /*Preço por número de campistas*/ + 14.90; // Preço da autocaravana
-            printf("Preço a pagar: %.2f", criarLoteTemp[linha][coluna].preco);
+            printf("Preço a pagar: %.2f\n", criarLoteTemp[linha][coluna].preco);
         }
     }
 }

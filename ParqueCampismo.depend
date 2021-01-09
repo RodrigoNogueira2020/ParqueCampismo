@@ -25,12 +25,10 @@
 	"mapa.h"
 	"menu.h"
 
-1610209711 source:c:\users\ricardo reis\desktop\parquecampismo\lotes.c
+1610214054 source:c:\users\ricardo reis\desktop\parquecampismo\lotes.c
 	<ctype.h>
 	<stdio.h>
 	<stdlib.h>
-	<fcntl.h>
-	<io.h>
 	"campista.h"
 	"lotes.h"
 	"mapa.h"
