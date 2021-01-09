@@ -6,6 +6,7 @@ typedef struct{
     int coluna;
 } mapa;
 
+
 void definirDimensoesLote(int *linha, int *coluna);
 void apresentarMapa(int linha, int coluna);
 

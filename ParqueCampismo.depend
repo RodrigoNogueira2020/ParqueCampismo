@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1610026586 source:c:\users\ricardo reis\desktop\parquecampismo\main.c
+1610207236 source:c:\users\ricardo reis\desktop\parquecampismo\main.c
 	<stdio.h>
 	<stdlib.h>
 	<ctype.h>
@@ -10,7 +10,7 @@
 
 1610104881 c:\users\ricardo reis\desktop\parquecampismo\campista.h
 
-1610141941 source:c:\users\ricardo reis\desktop\parquecampismo\menu.c
+1610208899 source:c:\users\ricardo reis\desktop\parquecampismo\menu.c
 	<stdio.h>
 	<stdlib.h>
 	<ctype.h>
@@ -20,15 +20,17 @@
 	"menu.h"
 	"mapa.h"
 
-1610138818 c:\users\ricardo reis\desktop\parquecampismo\lotes.h
+1610197366 c:\users\ricardo reis\desktop\parquecampismo\lotes.h
 	"campista.h"
 	"mapa.h"
 	"menu.h"
 
-1610138852 source:c:\users\ricardo reis\desktop\parquecampismo\lotes.c
+1610209711 source:c:\users\ricardo reis\desktop\parquecampismo\lotes.c
 	<ctype.h>
 	<stdio.h>
 	<stdlib.h>
+	<fcntl.h>
+	<io.h>
 	"campista.h"
 	"lotes.h"
 	"mapa.h"
@@ -59,5 +61,5 @@
 	"menu.h"
 	"mapa.h"
 
-1610138073 c:\users\ricardo reis\desktop\parquecampismo\mapa.h
+1610197310 c:\users\ricardo reis\desktop\parquecampismo\mapa.h
 

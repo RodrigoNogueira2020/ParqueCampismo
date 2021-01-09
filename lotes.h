@@ -30,6 +30,8 @@ typedef struct{
      */
 } lote;
 
+lote criarLoteTemp[6][6];
+
 /*Para definir as dimensões do lote*/
 void pedirCoordenadasLote(int *pedirLinha, int *pedirColuna);
 
