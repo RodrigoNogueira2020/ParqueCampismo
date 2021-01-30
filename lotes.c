@@ -67,28 +67,6 @@ void menuReservaLote(){
     printf("===================================\n");
 }
 
-//void registaDadosParque(){//regista os dados do lote na reservaAtual
-//
-//    if (parque[pedeLinha][pedeColuna].reservaAtual.tipo != NULL){
-//        parque[pedeLinha][pedeColuna].ultimasReservas[0] = parque[pedeLinha][pedeColuna].reservaAtual;
-//    }
-//
-//    if (lerDadosEletricidade()){//se a eletricidade for true regista na reservaAtual como true
-//        parque[pedeLinha-1][pedeColuna-1].reservaAtual.eletricidade = true;
-//    }else{//caso contrario regista como false
-//        parque[pedeLinha-1][pedeColuna-1].reservaAtual.eletricidade = false;
-//    }
-//    //regista os dados do lote na reservaAtual
-//    parque[pedeLinha-1][pedeColuna-1].reservaAtual.tipo = criarLote.tipo;
-//    parque[pedeLinha-1][pedeColuna-1].reservaAtual.custoTotal = criarLote.custoTotal;
-//    parque[pedeLinha-1][pedeColuna-1].reservaAtual.numCampista = criarLote.numCampista;
-//
-//    for (int i = 0; i < parque[pedeLinha-1][pedeColuna-1].reservaAtual.numCampista; ++i){//regista os dados do utilizador na reservaAtual
-//        strcpy(parque[pedeLinha-1][pedeColuna-1].reservaAtual.dados[i].nome, criarLote.dados[i].nome);
-//        parque[pedeLinha-1][pedeColuna-1].reservaAtual.dados[i].idade = criarLote.dados[i].idade;
-//    }
-//}
-
 void pedirDadosLotes(int linha, int coluna){
     char eletricidade, tipoAloj;
     int numCampistas = 0;
@@ -114,16 +92,13 @@ void pedirDadosLotes(int linha, int coluna){
                 criarLote[linha-1][coluna-1].reservaAtual.tipoAlojamento = 'T';
                 criarLote[linha-1][coluna-1].reservaAtual.preco += 4.50;
                 break;
-
             case 'c':
                 criarLote[linha-1][coluna-1].reservaAtual.tipoAlojamento = 'C';
                 criarLote[linha-1][coluna-1].reservaAtual.preco += 6.00;
                 break;
-
             case 'a':
                 criarLote[linha-1][coluna-1].reservaAtual.tipoAlojamento = 'A';
                 criarLote[linha-1][coluna-1].reservaAtual.preco += 14.90;
-
                 break;
             default:
                 printf("\n==ERRO! Caractér inválido!==\n\n");
@@ -195,6 +170,7 @@ void consultarLotes(int linha, int coluna){
 
     printf("\n\n===   INFORMAÇÃO DO LOTE   ===");
     printf("\n::Tipo de alojamento: ");
+    printf("%c", criarLote[linha-1][coluna-1].reservaAtual.tipoAlojamento);
     switch(criarLote[linha-1][coluna-1].reservaAtual.tipoAlojamento){
         case 'T':
             printf("Tenda");
@@ -228,14 +204,71 @@ void consultarLotes(int linha, int coluna){
 }
 
 void editarReservaLote(int linha, int coluna){
+    int info;
+    do{
+        consultarLotes(linha, coluna);
+        printf("\n====================================\n");
+        printf("\n||Qual é o detalhe que deseja alterar?||\n");
+        printf("\n====================================\n");
+        printf("1 - Tipo de alojamento\n");
+        printf("2 - Rede eletrica\n");
+        printf("3 - Adicionar campista\n");
+        printf("4 - Remover campista\n");
+        printf("0 - Sair\n");
+        scanf("%d", &info);
+    }while(isalpha(info) == 0 && info != 0);
+}
 
+void anularInfo(int linha, int coluna){
+    if(criarLote[linha-1][coluna-1].reservaAtual.tipoAlojamento != NULL){
+        criarLote[linha-1][coluna-1].reservaAtual.tipoAlojamento = NULL;
+        criarLote[linha-1][coluna-1].reservaAtual.redeEletrica = NULL;
+        criarLote[linha-1][coluna-1].reservaAtual.numeroCampistas = NULL;
+        criarLote[linha-1][coluna-1].reservaAtual.preco = 0;
+        criarLote[linha-1][coluna-1].reservaAtual.coordenadasCol = NULL;
+        criarLote[linha-1][coluna-1].reservaAtual.coordenadasLin = NULL;
+
+        for(int i=0; i<criarLote[linha-1][coluna-1].reservaAtual.numeroCampistas; i+1){
+            strcpy(criarLote[linha-1][coluna-1].reservaAtual.pessoaCampista[i].nome, NULL);
+            criarLote[linha-1][coluna-1].reservaAtual.pessoaCampista[i].idade = NULL;
+        }
+    }
 }
 
 void libertarReserva(int linha, int coluna){
-    if(criarLote[linha][coluna].ultimasReservas[i] != NULL)
-        criarLote[linha][coluna].ultimasReservas[i] = criarLote[linha][coluna].reservaAtual;
+
+    if(criarLote[linha-1][coluna-1].reservaAtual.tipoAlojamento == NULL){
+        printf("\n==ERRO! Este lote não está reservado!==\n");
+        return;
     }
-    printf("-- Reserva de lote libertada com sucesso! --")
+
+    if(criarLote[linha-1][coluna-1].ultimasReservas[0].tipoAlojamento == NULL)
+    {
+        criarLote[linha-1][coluna-1].ultimasReservas[0] = criarLote[linha][coluna].reservaAtual;
+        anularInfo(linha, coluna);
+    }
+    else if (criarLote[linha-1][coluna-1].ultimasReservas[1].tipoAlojamento == NULL)
+    {
+        criarLote[linha-1][coluna-1].ultimasReservas[1] = criarLote[linha-1][coluna-1].ultimasReservas[0];
+        criarLote[linha-1][coluna-1].ultimasReservas[0] = criarLote[linha][coluna].reservaAtual;
+        anularInfo(linha, coluna);
+    }
+    else if(criarLote[linha-1][coluna-1].ultimasReservas[2].tipoAlojamento == NULL)
+    {
+        criarLote[linha-1][coluna-1].ultimasReservas[2] = criarLote[linha-1][coluna-1].ultimasReservas[1];
+        criarLote[linha-1][coluna-1].ultimasReservas[1] = criarLote[linha-1][coluna-1].ultimasReservas[0];
+        criarLote[linha-1][coluna-1].ultimasReservas[0] = criarLote[linha][coluna].reservaAtual;
+        anularInfo(linha, coluna);
+    }
+    else if(criarLote[linha-1][coluna-1].ultimasReservas[2].tipoAlojamento != NULL)
+    {
+        criarLote[linha-1][coluna-1].ultimasReservas[2] = criarLote[linha-1][coluna-1].ultimasReservas[1];
+        criarLote[linha-1][coluna-1].ultimasReservas[1] = criarLote[linha-1][coluna-1].ultimasReservas[0];
+        criarLote[linha-1][coluna-1].ultimasReservas[0] = criarLote[linha][coluna].reservaAtual;
+        anularInfo(linha, coluna);
+    }
+
+    printf("\n-- Reserva de lote libertada com sucesso! --\n");
 }
 
 

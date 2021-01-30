@@ -17,6 +17,7 @@
 #include "mapa.h"
 
 void apresentarMapa(int linha, int coluna){
+    char infoMapa[3] = "";
     printf("\nMapa dos lotes:\n\n");
 
     /*Formação das colunas*/
@@ -31,7 +32,7 @@ void apresentarMapa(int linha, int coluna){
         printf("%2d    ", l+1);
 
         for (int c = 0; c < coluna; c++){
-            loteInfoMapa(linha, coluna);
+            loteInfoMapa(linha, coluna, infoMapa);
             printf("%s %2s", "", " ");
 //            printf("%s %2s", "...", " ");
         }
@@ -41,43 +42,45 @@ void apresentarMapa(int linha, int coluna){
     puts("\n");
 }
 
-void loteInfoMapa(int linha, int coluna){
-//    char* infoMapa = (char*)malloc(3 * sizeof(int));
-//
-//    if(criarLote[linha][coluna].reservaAtual.tipoAlojamento == '\0'){
-//        printf("%s", "...");
-//    }
-//    else{
-//        switch(criarLote[linha][coluna].reservaAtual.tipoAlojamento){
-//            case 'T':
-//                strcat(infoMapa, "T");
-//                break;
-//            case 'C':
-//                strcat(infoMapa, "C");
-//                break;
-//            case 'A':
-//                strcat(infoMapa, "A");
-//                break;
-//        }
-//        switch(criarLote[linha][coluna].reservaAtual.redeEletrica){
-//            case 'e':
-//                strcat(infoMapa, "e");
-//                break;
-//            case 'x':
-//                break;
-//                strcat(infoMapa, "x");
-//        }
+void loteInfoMapa(int linha, int coluna, char* infoMapa){
+    char c = criarLote[linha-1][coluna-1].reservaAtual.tipoAlojamento;
+    if(criarLote[linha-1][coluna-1].reservaAtual.tipoAlojamento == '\0'){
+        printf("%s", "...");
+        printf("%c", criarLote[linha-1][coluna-1].reservaAtual.tipoAlojamento);
+    }
+    else{
+        switch(criarLote[linha-1][coluna-1].reservaAtual.tipoAlojamento){
+            case 'T':
+                strcat(infoMapa, "T");
+                break;
+            case 'C':
+                strcat(infoMapa, "C");
+                break;
+            case 'A':
+                strcat(infoMapa, "A");
+                break;
+        }
 
-//        char c = criarLote[linha][coluna].reservaAtual.numeroCampistas + '0';
-//        strcat(infoMapa, c);
-        if(criarLote[linha][coluna].reservaAtual.tipoAlojamento == NULL){
-            printf("...");
+        switch(criarLote[linha-1][coluna-1].reservaAtual.redeEletrica){
+            case 'e':
+                strcat(infoMapa, "e");
+                break;
+            case 'x':
+                break;
+                strcat(infoMapa, "x");
         }
-        else{
-            printf("%c", criarLote[linha][coluna].reservaAtual.tipoAlojamento);
-            printf("%c", criarLote[linha][coluna].reservaAtual.redeEletrica);
-            printf("%d", criarLote[linha][coluna].reservaAtual.numeroCampistas);
-        }
+        char c = criarLote[linha-1][coluna-1].reservaAtual.numeroCampistas + '0';
+        strcat(infoMapa, c);
+    }
+//
+//        if(criarLote[linha][coluna].reservaAtual.tipoAlojamento == NULL){
+//            printf("...");
+//        }
+//        else{
+//            printf("%c", criarLote[linha][coluna].reservaAtual.tipoAlojamento);
+//            printf("%c", criarLote[linha][coluna].reservaAtual.redeEletrica);
+//            printf("%d", criarLote[linha][coluna].reservaAtual.numeroCampistas);
+//        }
 //        printf("%s", infoMapa);
 
 //        if(toupper(parque[i][j].reservaAtual.tipo) == NULL){//se a reserva atual não tiver nenhum registo do tipo de alojamento irá mostrar na tabela o lote com o respetivo numero

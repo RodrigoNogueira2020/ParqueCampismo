@@ -86,7 +86,6 @@ void menu(){
             // Consultar informação de lote
             case '3':
                 switch(Mapa.coluna){
-                    // Se coluna é zero é porque o mapa dos lotes ainda não existe
                     case 0:
                         definirDimensoesLote(&Mapa.linha, &Mapa.coluna);
                     default:
@@ -100,10 +99,27 @@ void menu(){
             case '4':
                 printf("4ª opção escolhida\n");
                 break;
-            // Editar a reserva de um lote
+            // Editar reserva
             case '5':
-                apresentarMapa(Mapa.linha, Mapa.coluna);
-                pedirCoordenadasLote(&pedirLinha, &pedirColuna);
+                switch(Mapa.coluna){
+                    case 0:
+                        definirDimensoesLote(&Mapa.linha, &Mapa.coluna);
+                    default:
+                        apresentarMapa(Mapa.linha, Mapa.coluna);
+                        pedirCoordenadasLote(&pedirLinha, &pedirColuna);
+                        editarReservaLote(pedirLinha, pedirColuna);
+                }
+                break;
+            // Libertar reserva
+            case '6':
+                switch(Mapa.coluna){
+                    case 0:
+                        definirDimensoesLote(&Mapa.linha, &Mapa.coluna);
+                    default:
+                        apresentarMapa(Mapa.linha, Mapa.coluna);
+                        pedirCoordenadasLote(&pedirLinha, &pedirColuna);
+                        libertarReserva(pedirLinha, pedirColuna);
+                }
                 break;
             case '7':
                 system("cls"); // Limpar o ecrã
