@@ -10,6 +10,7 @@
 #include <stdlib.h>
 #include <ctype.h>
 #include <locale.h>
+#include <string.h>
 #include "campista.h"
 #include "lotes.h"
 #include "menu.h"
@@ -20,19 +21,79 @@ void apresentarMapa(int linha, int coluna){
 
     /*Formação das colunas*/
     printf("%3s", ""); // Espaço esquerdo inicial da coluna da tabela
-    for(int l=0; l<coluna; l++){
+    for(int l = 0; l < coluna; l++){
         printf("%5d ", l+1);
     }
 
     /*Número de linhas*/
-    for(int l=0; l<linha; l++){
+    for(int l = 0; l < linha; l++){
         printf("\n");
         printf("%2d    ", l+1);
 
-        for (int c=0; c<coluna; c++)
-            printf("%s %2s", "...", " ");
+        for (int c = 0; c < coluna; c++){
+            loteInfoMapa(linha, coluna);
+            printf("%s %2s", "", " ");
+//            printf("%s %2s", "...", " ");
+        }
+
+
     }
     puts("\n");
+}
+
+void loteInfoMapa(int linha, int coluna){
+//    char* infoMapa = (char*)malloc(3 * sizeof(int));
+//
+//    if(criarLote[linha][coluna].reservaAtual.tipoAlojamento == '\0'){
+//        printf("%s", "...");
+//    }
+//    else{
+//        switch(criarLote[linha][coluna].reservaAtual.tipoAlojamento){
+//            case 'T':
+//                strcat(infoMapa, "T");
+//                break;
+//            case 'C':
+//                strcat(infoMapa, "C");
+//                break;
+//            case 'A':
+//                strcat(infoMapa, "A");
+//                break;
+//        }
+//        switch(criarLote[linha][coluna].reservaAtual.redeEletrica){
+//            case 'e':
+//                strcat(infoMapa, "e");
+//                break;
+//            case 'x':
+//                break;
+//                strcat(infoMapa, "x");
+//        }
+
+//        char c = criarLote[linha][coluna].reservaAtual.numeroCampistas + '0';
+//        strcat(infoMapa, c);
+        if(criarLote[linha][coluna].reservaAtual.tipoAlojamento == NULL){
+            printf("...");
+        }
+        else{
+            printf("%c", criarLote[linha][coluna].reservaAtual.tipoAlojamento);
+            printf("%c", criarLote[linha][coluna].reservaAtual.redeEletrica);
+            printf("%d", criarLote[linha][coluna].reservaAtual.numeroCampistas);
+        }
+//        printf("%s", infoMapa);
+
+//        if(toupper(parque[i][j].reservaAtual.tipo) == NULL){//se a reserva atual não tiver nenhum registo do tipo de alojamento irá mostrar na tabela o lote com o respetivo numero
+//            printf("\t---\t\t");
+//            contaLivres++;//conta os lotes livres
+//        }
+//        else{//caso contrario mostra informacao do lote
+//            if (parque[i][j].reservaAtual.eletricidade){
+//                printf("\t%ce%d\t\t", toupper(parque[i][j].reservaAtual.tipo), parque[i][j].reservaAtual.numCampista);
+//            }else{
+//                printf("\t%cx%d\t\t", toupper(parque[i][j].reservaAtual.tipo),parque[i][j].reservaAtual.numCampista);
+//            }
+//        }
+
+//    }
+
 }
 
 void definirDimensoesLote(int *linha, int *coluna){
@@ -44,6 +105,7 @@ void definirDimensoesLote(int *linha, int *coluna){
 
         if(coluna <= 0)
             printf("\n==ERRO! Número de coluna tem de ser maior que 0, senão não existe==\n");
+
     }while(*coluna != 0 && *coluna < 0);
 
     do{

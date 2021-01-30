@@ -15,6 +15,7 @@ typedef struct{
     int idade;
 } campista;
 
+void imprimirCampista(campista c);
 campista criarCampista(char *nome, int idade);
 
 #endif // CAMPISTA_H_INCLUDED

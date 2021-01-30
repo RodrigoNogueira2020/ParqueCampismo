@@ -11,13 +11,16 @@
 #include "campista.h"
 #include "mapa.h"
 #include "menu.h"
+#define MAX_LINHAS 15
+#define MAX_COLUNAS 15
 
 typedef struct{
     campista pessoaCampista[6];
-    char tipoAlojamento; // T - tenda, C - caravana ou A - autocaravana
-    char redeEletrica; // e - Se tem rede eletrica, x - Se não tem rede eletrica
+    char tipoAlojamento;   // T - tenda, C - caravana ou A - autocaravana
+    char redeEletrica;    // e - Se tem rede eletrica, x - Se não tem rede eletrica
     int numeroCampistas; // Número de campistas por lote
     float preco;
+
     int coordenadasLin;
     int coordenadasCol;
 
@@ -28,16 +31,31 @@ typedef struct{
      * Eletricidade - 3,00€
      * Campista - 3,50€
      */
-} lote;
+}lote;
 
-lote criarLoteTemp[6][6];
+typedef struct{
+    lote reservaAtual;
+    lote ultimasReservas[3];
+}reserva;
+
+reserva criarLote[MAX_LINHAS][MAX_COLUNAS];
+/*
+    imprimir reserva(reserva r);
+    char getTipoAlojamento(reserva r);
+    char get eletricidade(reserva r);
+*/
 
 /*Para definir as dimensões do lote*/
 void pedirCoordenadasLote(int *pedirLinha, int *pedirColuna);
 
-lote criarLote(campista pessoaCampista[], char tipoAlojamento, char redeEletrica, int numeroCampistas, float preco, int coordenadasLin, int coordenadasCol);
+//reserva criarLote(campista pessoaCampista[], char tipoAlojamento, char redeEletrica, int numeroCampistas, float preco, int coordenadasLin, int coordenadasCol);
 
 /*Para definir as dimensões do lote*/
 void pedirDadosLotes(int linha, int coluna);
+
+/*float calcularTarifa() -> Em recurso, calcula baseado nos dias tambem*/
+void escreverDadosFicheirosLotes();
+void lerDadosFicheiroLotes();
+
 
 #endif // LOTES_H_INCLUDED

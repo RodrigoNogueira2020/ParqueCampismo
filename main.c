@@ -17,7 +17,10 @@
 
 int main(){
     setlocale(LC_ALL, "");
+
+    lerDadosFicheiroLotes();
     menu();
+
 
     return 0;
 }

@@ -20,7 +20,7 @@ campista criarCampista(char *nome, int idade){
     return campista;
 }
 
-//void imprimirDadosCampista(Campista criarCampista){
-//    printf("Nome: %s\n", criarCampista.nome);
-//    printf("Idade: %d\n", criarCampista.idade);
-//}
+void imprimirCampista(campista c){
+    printf("Nome: %s\n", c.nome);
+    printf("Idade: %d\n", c.idade);
+}
