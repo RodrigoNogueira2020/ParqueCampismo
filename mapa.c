@@ -34,12 +34,29 @@ void apresentarMapa(int linha, int coluna){
         for (int c = 0; c < coluna; c++){
 //            loteInfoMapa(linha, coluna, infoMapa);
 //            printf(" %2s", " ");
-            printf("%s ", "...", "");
-        }
+//            printf("%s ", "...", "");
 
+            printf(" ");
+            if(criarLote[l][c].reservaAtual.tipoAlojamento == NULL)
+                printf("...");
+            else
+                printf("%c%c%d", criarLote[l][c].reservaAtual.tipoAlojamento, criarLote[l][c].reservaAtual.redeEletrica, criarLote[l][l].reservaAtual.numeroCampistas);
+        }
 
     }
     puts("\n");
+
+//    if(criarLote[i][j].reservaAtual.tipo == NULL){
+//        printf("\t---\t\t");
+//        contaLivres++;//conta os lotes livres
+//    }
+//    else{//caso contrario mostra informacao do lote
+//        if (criarLote[i][j].reservaAtual.redeEletrica){
+//            printf("\t%ce%d\t\t", criarLote[i][j].reservaAtual.tipo, criarLote[i][j].reservaAtual.numCampista);
+//        }else{
+//            printf("\t%cx%d\t\t", criarLote[i][j].reservaAtual.tipo, criarLote[i][j].reservaAtual.numCampista);
+//        }
+//    }
 }
 
 void loteInfoMapa(int linha, int coluna, char* infoMapa){

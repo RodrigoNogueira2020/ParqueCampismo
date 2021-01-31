@@ -25,6 +25,7 @@ typedef struct{
     int coordenadasLin;
     int coordenadasCol;
 }lote;
+
 typedef struct{
     lote reservaAtual;
     lote ultimasReservas[3];
