@@ -14,11 +14,8 @@ typedef struct{
     int linha;
     int coluna;
 } mapa;
-mapa Mapa;
 
-typedef struct{
-  struct reserva *r;
-}reservaMapa;
+mapa Mapa;
 
 void definirDimensoesLote(int *linha, int *coluna);
 void apresentarMapa(int linha, int coluna);
