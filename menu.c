@@ -4,7 +4,7 @@
 || Autores : +Rodrigo Nogueira - 200262002 - 200262002@estudantes.ips.pt
 ||           +Ricardo Reis     - 200262024 - 200262024@estudantes.ips.pt
 ||============================================================================
-|| 1ª Fase de Entrega
+|| 2ª Fase de Entrega
 */
 #include <stdio.h>
 #include <stdlib.h>
@@ -97,7 +97,7 @@ void menu(){
                 break;
             // Pesquisar lote do nome de campista
             case '4':
-                printf("4ª opção escolhida\n");
+                pesquisarPorNomeCampista(pedirLinha, pedirColuna);
                 break;
             // Editar reserva
             case '5':
@@ -107,6 +107,7 @@ void menu(){
                     default:
                         apresentarMapa(Mapa.linha, Mapa.coluna);
                         pedirCoordenadasLote(&pedirLinha, &pedirColuna);
+                        system("cls");
                         editarReservaLote(pedirLinha, pedirColuna);
                 }
                 break;

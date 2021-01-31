@@ -1,3 +1,11 @@
+/*
+|| Projeto Gestão de Reservas de Parque de Campismo
+||============================================================================
+|| Autores : +Rodrigo Nogueira - 200262002 - 200262002@estudantes.ips.pt
+||           +Ricardo Reis     - 200262024 - 200262024@estudantes.ips.pt
+||============================================================================
+|| 2ª Fase de Entrega
+*/
 #ifndef MAPA_H_INCLUDED
 #define MAPA_H_INCLUDED
 #define MAX_LINHAS 15

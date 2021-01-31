@@ -4,7 +4,7 @@
 || Autores : +Rodrigo Nogueira - 200262002 - 200262002@estudantes.ips.pt
 ||           +Ricardo Reis     - 200262024 - 200262024@estudantes.ips.pt
 ||============================================================================
-|| 1ª Fase de Entrega
+|| 2ª Fase de Entrega
 */
 #include <stdio.h>
 #include <stdlib.h>

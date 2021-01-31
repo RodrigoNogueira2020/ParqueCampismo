@@ -8,9 +8,9 @@
 	"lotes.h"
 	"menu.h"
 
-1611227107 c:\users\ricardo reis\desktop\parquecampismo\campista.h
+1612125075 c:\users\ricardo reis\desktop\parquecampismo\campista.h
 
-1612035945 source:c:\users\ricardo reis\desktop\parquecampismo\menu.c
+1612109529 source:c:\users\ricardo reis\desktop\parquecampismo\menu.c
 	<stdio.h>
 	<stdlib.h>
 	<ctype.h>
@@ -20,19 +20,19 @@
 	"menu.h"
 	"mapa.h"
 
-1612032034 c:\users\ricardo reis\desktop\parquecampismo\lotes.h
+1612125023 c:\users\ricardo reis\desktop\parquecampismo\lotes.h
 	"campista.h"
 	"mapa.h"
 	"menu.h"
 
-1612039115 source:c:\users\ricardo reis\desktop\parquecampismo\lotes.c
-	<ctype.h>
+1612124990 source:c:\users\ricardo reis\desktop\parquecampismo\lotes.c
 	<stdio.h>
 	<stdlib.h>
 	<ctype.h>
+	<string.h>
 	"campista.h"
 	"lotes.h"
-	"Mapa.h"
+	"mapa.h"
 
 1611227155 source:c:\users\ricardo reis\desktop\parquecampismo\campista.c
 	<stdio.h>
@@ -41,7 +41,7 @@
 	"campista.h"
 	"lotes.h"
 
-1610026671 c:\users\ricardo reis\desktop\parquecampismo\menu.h
+1612125075 c:\users\ricardo reis\desktop\parquecampismo\menu.h
 	<stdio.h>
 	<stdlib.h>
 	<ctype.h>
@@ -50,7 +50,7 @@
 	"lotes.h"
 	"menu.h"
 
-1612038970 source:c:\users\ricardo reis\desktop\parquecampismo\mapa.c
+1612113366 source:c:\users\ricardo reis\desktop\parquecampismo\mapa.c
 	<stdio.h>
 	<stdlib.h>
 	<ctype.h>
@@ -61,5 +61,5 @@
 	"menu.h"
 	"mapa.h"
 
-1612042876 c:\users\ricardo reis\desktop\parquecampismo\mapa.h
+1612125040 c:\users\ricardo reis\desktop\parquecampismo\mapa.h
 
